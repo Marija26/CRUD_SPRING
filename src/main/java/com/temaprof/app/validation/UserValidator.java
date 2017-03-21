@@ -9,6 +9,7 @@ import org.springframework.validation.Validator;
  * Created by TEMAPROF on 21.03.2017.
  */
 public class UserValidator implements Validator{
+
     @Override
     public boolean supports(Class<?> aClass) {
         return User.class.isAssignableFrom(aClass);
