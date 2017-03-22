@@ -1,0 +1,5 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/hibernate-configuration">
+    <session-factory>
+        <mapping class="com.temaprof.app.model.User"/>
+    </session-factory>
+</hibernate-configuration>
