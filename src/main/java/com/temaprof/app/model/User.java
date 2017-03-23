@@ -1,16 +1,36 @@
 package com.temaprof.app.model;
 
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Created by TEMAPROF on 19.03.2017.
  */
+@Entity
+@Table(name = "user")
 public class User {
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Basic
+    @Column(name = "name")
     private String name;
+
+    @Basic
+    @Column(name = "age")
     private Integer age;
+
+    @Basic
+    @Column(name = "isAdmin")
     private boolean isAdmin;
+
+    @Basic
+    @Column(name = "createdDate")
+    @GeneratedValue
     private Timestamp createdDate;
+
 
     public User() {
     }
