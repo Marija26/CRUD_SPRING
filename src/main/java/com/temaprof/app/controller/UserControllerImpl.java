@@ -35,7 +35,7 @@ public class UserControllerImpl implements UserController {
     public String getUsers(ModelMap model) {
         List<User> users = this.repository.listAll();
         model.addAttribute("user", users);
-        return null;
+        return "index";
     }
 
     @RequestMapping(value = "addUser", method = RequestMethod.GET)
@@ -49,6 +49,7 @@ public class UserControllerImpl implements UserController {
     public String addUser(@RequestParam("name") String name, @RequestParam("age") String age, @RequestParam(value = "isAdmin",
     required = true, defaultValue = "false") Boolean isAdmin) {
         User user = new User(name, Integer.parseInt(age), isAdmin);
+        user.setCreatedDate();
         this.repository.addUser(user);
         return "redirect:/";
     }

@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * Created by TEMAPROF on 19.03.2017.
  */
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @Column(name = "id")
@@ -82,8 +82,8 @@ public class User {
         return createdDate;
     }
 
-    public void setCreatedDate(Timestamp createdDate) {
-        this.createdDate = new Timestamp(System.currentTimeMillis());;
+    public void setCreatedDate() {
+        this.createdDate = new Timestamp(System.currentTimeMillis());
     }
 
     @Override
