@@ -13,30 +13,32 @@
     <title>Update User</title>
 </head>
 <body>
+<h2><a href="/">Home</a></h2>
+
 <c:url var="saveUrl" value="/updateUser/${userAttribute.id}"/>
 <form:form modelAttribute="userAttribute" method="post" action="${saveUrl}">
-<table>
-    <tr>
-        <td><form:label path="id">Id:</form:label></td>
-        <td><form:input path="id" disabled="true" /></td>
-    </tr>
+    <table>
+        <tr>
+            <td><form:label path="id">Id:</form:label></td>
+            <td><form:input path="id" disabled="true"/></td>
+        </tr>
 
-    <tr>
-        <td><form:label path="name">Name</form:label></td>
-        <td><form:input path="name"/></td>
-    </tr>
+        <tr>
+            <td><form:label path="name">Name</form:label></td>
+            <td><form:input path="name"/></td>
+        </tr>
 
-    <tr>
-        <td><form:label path="age">Age</form:label></td>
-        <td><form:input path="age"/></td>
-    </tr>
+        <tr>
+            <td><form:label path="age">Age</form:label></td>
+            <td><form:input path="age"/></td>
+        </tr>
 
-    <%--<tr>--%>
-        <%--<td><form:label path="isAdmin">Admin</form:label></td>--%>
-        <%--<td><form:checkbox path="isAdmin"/></td>--%>
-    <%--</tr>--%>
-</table>
-<input type="submit" value="Save"/>
+            <%--<tr>--%>
+            <%--<td><form:label path="isAdmin">Admin</form:label></td>--%>
+            <%--<td><form:checkbox path="isAdmin"/></td>--%>
+            <%--</tr>--%>
+    </table>
+    <input type="submit" value="Save"/>
 </form:form>
 </body>
 </html>
