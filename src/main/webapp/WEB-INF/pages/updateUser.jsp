@@ -13,7 +13,7 @@
     <title>Update User</title>
 </head>
 <body>
-<c:url var="saveUrl" value="/updateUser=${userAttribute.id}"/>
+<c:url var="saveUrl" value="/updateUser/${userAttribute.id}"/>
 <form:form modelAttribute="userAttribute" method="post" action="${saveUrl}">
 <table>
     <tr>
@@ -23,13 +23,18 @@
 
     <tr>
         <td><form:label path="name">Name</form:label></td>
-        <td><form:input path="age"/></td>
+        <td><form:input path="name"/></td>
     </tr>
 
     <tr>
-        <td><form:label path="isAdmin"/></td>
-        <td><form:checkbox path="isAdmin" /></td>
+        <td><form:label path="age">Age</form:label></td>
+        <td><form:input path="age"/></td>
     </tr>
+
+    <%--<tr>--%>
+        <%--<td><form:label path="isAdmin">Admin</form:label></td>--%>
+        <%--<td><form:checkbox path="isAdmin"/></td>--%>
+    <%--</tr>--%>
 </table>
 <input type="submit" value="Save"/>
 </form:form>
