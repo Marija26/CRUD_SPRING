@@ -16,4 +16,6 @@ public interface UserController {
     String deleteUser(Integer id);
 
     String getUpdate(Integer id, Model model);
+
+    String postUpdate(Integer id, Model model);
 }

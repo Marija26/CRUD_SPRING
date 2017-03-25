@@ -67,4 +67,11 @@ public class UserControllerImpl implements UserController {
         model.addAttribute("userAttribute", this.repository.get(id));
         return "updateUser";
     }
+
+    @RequestMapping(value = "updateUser/{id}", method = RequestMethod.POST)
+    @Override
+    public String postUpdate(@PathVariable Integer id, Model model) {
+        model.addAttribute("userAttribute", this.repository.get(id));
+        return "updateUser";
+    }
 }
