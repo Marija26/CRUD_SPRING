@@ -33,10 +33,12 @@
             <td><form:input path="age"/></td>
         </tr>
 
-            <%--<tr>--%>
-            <%--<td><form:label path="isAdmin">Admin</form:label></td>--%>
-            <%--<td><form:checkbox path="isAdmin"/></td>--%>
-            <%--</tr>--%>
+        <tr>
+            <%--<td><form:label path="isadmin">Admin</form:label></td>--%>
+            <%--<td><form:checkbox path="isadmin"/></td>--%>
+                <td>Is Admin?</td>
+                <td><input type="checkbox" name="isAdmin"></td>
+        </tr>
     </table>
     <input type="submit" value="Save"/>
 </form:form>
