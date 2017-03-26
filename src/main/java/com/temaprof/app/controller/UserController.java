@@ -17,5 +17,5 @@ public interface UserController {
 
     String getUpdate(Integer id, Model model);
 
-    String postUpdate(Integer id, Model model);
+    String postUpdate(String name, String age, Boolean isAdmin, Integer id, Model model);
 }

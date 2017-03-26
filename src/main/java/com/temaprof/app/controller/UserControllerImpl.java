@@ -70,8 +70,13 @@ public class UserControllerImpl implements UserController {
 
     @RequestMapping(value = "updateUser/{id}", method = RequestMethod.POST)
     @Override
-    public String postUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("userAttribute", this.repository.get(id));
-        return "updateUser";
+    public String postUpdate(@RequestParam("name") String name, @RequestParam("age") String age, @RequestParam(value = "isAdmin",
+            required = true, defaultValue = "false") Boolean isAdmin, @PathVariable Integer id, Model model) {
+        User user = this.repository.get(id);
+        user.setName(name);
+        user.setAge(Integer.valueOf(age));
+        user.setAdmin(isAdmin);
+        repository.updateUser(user);
+        return "redirect:/";
     }
 }
