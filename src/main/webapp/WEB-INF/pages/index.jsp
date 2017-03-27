@@ -16,13 +16,14 @@
 <div>
     <h1>User Manager</h1>
     <c:if test="${!empty user}">
-        <table>
+        <table border="1" cellpadding="8" cellspacing="0">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Admin</th>
                 <th>Created Date</th>
+                <th>&nbsp;</th>
                 <th>&nbsp;</th>
             </tr>
             <c:forEach items="${user}" var="user">
