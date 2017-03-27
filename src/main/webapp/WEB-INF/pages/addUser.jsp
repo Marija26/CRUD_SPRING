@@ -13,7 +13,7 @@
 </head>
 <body>
 <form:form method="post" action="addUser" commandName="user">
-    <table>
+    <table border="1" cellpadding="8" cellspacing="0">
         <tr>
             <td>Name</td>
             <td><input type="text" name="name" value=""/></td>
