@@ -1,6 +1,9 @@
 package com.temaprof.app.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 /**
@@ -12,10 +15,12 @@ public class User {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @NotNull
     private int id;
 
     @Basic
     @Column(name = "name")
+    @NotNull
     private String name;
 
     @Basic
@@ -24,11 +29,13 @@ public class User {
 
     @Basic
     @Column(name = "isAdmin")
+    @NotNull
     private boolean isAdmin;
 
     @Basic
     @Column(name = "createdDate")
     @GeneratedValue
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Timestamp createdDate;
 
 
