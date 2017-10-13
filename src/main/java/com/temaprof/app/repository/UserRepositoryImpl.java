@@ -17,7 +17,7 @@ import java.util.List;
 public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Override
     public void addUser(User user) {

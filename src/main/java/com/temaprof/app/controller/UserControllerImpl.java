@@ -18,7 +18,7 @@ import java.util.List;
  * Created by TEMAPROF on 20.03.2017.
  */
 @Controller
-public class UserControllerImpl implements UserController {
+public class UserControllerImpl  {
 
     private UserRepository repository;
 
@@ -31,7 +31,6 @@ public class UserControllerImpl implements UserController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    @Override
     public String getUsers(ModelMap model) {
         List<User> users = this.repository.listAll();
         model.addAttribute("user", users);
@@ -39,13 +38,11 @@ public class UserControllerImpl implements UserController {
     }
 
     @RequestMapping(value = "addUser", method = RequestMethod.GET)
-    @Override
     public String addUser(ModelMap model) {
         return "addUser";
     }
 
     @RequestMapping(value = "addUser", method = RequestMethod.POST)
-    @Override
     public String addUser(@RequestParam("name") String name, @RequestParam("age") String age, @RequestParam(value = "isAdmin",
     required = true, defaultValue = "false") Boolean isAdmin) {
         User user = new User(name, Integer.parseInt(age), isAdmin);
@@ -55,21 +52,18 @@ public class UserControllerImpl implements UserController {
     }
 
     @RequestMapping(value = "deleteUser/{id}", method = RequestMethod.GET)
-    @Override
     public String deleteUser(@PathVariable Integer id) {
         this.repository.removeUser(id);
         return "redirect:/";
     }
 
     @RequestMapping(value = "updateUser/{id}", method = RequestMethod.GET)
-    @Override
     public String getUpdate(@PathVariable Integer id, Model model) {
         model.addAttribute("userAttribute", this.repository.get(id));
         return "updateUser";
     }
 
     @RequestMapping(value = "updateUser/{id}", method = RequestMethod.POST)
-    @Override
     public String postUpdate(@RequestParam("name") String name, @RequestParam("age") String age, @RequestParam(value = "isAdmin",
             required = true, defaultValue = "false") Boolean isAdmin, @PathVariable Integer id, Model model) {
         User user = this.repository.get(id);
