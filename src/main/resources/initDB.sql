@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS students;
 DROP SEQUENCE IF EXISTS global_seq;
 
 CREATE SEQUENCE global_seq START 100000;
 
-CREATE TABLE users
+CREATE TABLE students
 (
   id         INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
   age        INTEGER ,

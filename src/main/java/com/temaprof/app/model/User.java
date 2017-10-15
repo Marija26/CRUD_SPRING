@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  * Created by TEMAPROF on 19.03.2017.
  */
 @Entity
-@Table(name = "users")
+@Table(name = "students")
 public class User {
     @Id
     @Column(name = "id")
